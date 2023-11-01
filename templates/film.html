@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Film</title>
+</head>
+<body>
+<h1>Кино</h1>
+<iframe src="{{ kino.link }}" width="640" height="350"></iframe>
+<hr>
+<form action="" method="post">
+    {% csrf_token %}
+    <table>
+        {{ forma }}
+    </table>
+    <input type="submit" value="Отправить">
+</form>
+{% for one in commentsall %}
+    <div>
+        Имя: {{ one.name }}
+        Дата: {{ one.timedata }}
+        Комментарий: {{ one.body }}
+    </div>
+
+{% endfor %}
+</body>
+</html>
