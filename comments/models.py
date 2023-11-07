@@ -1,4 +1,5 @@
 from django.db import models
+from django.core.exceptions import ValidationError
 
 
 # Create your models here.
@@ -15,3 +16,7 @@ class Comment(models.Model):
     active = models.BooleanField(default=False)
     like = models.IntegerField(default=0)
     kino = models.ForeignKey(Kino, on_delete=models.SET_NULL, null=True,blank=True)
+
+
+
+
